@@ -34,14 +34,14 @@ def parse_query_file(query_file, begin_date, end_date):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--root_directory', type=str, default='../output/', help='news and comments root directory')
-    parser.add_argument('--begin_date', type=str, default='2018-10-28', help='datetime yyyy-mm-dd')
-    parser.add_argument('--end_date', type=str, default='2018-10-30', help='datetime yyyy-mm-dd')
+    parser.add_argument('--begin_date', type=str, default='2020-01-06', help='datetime yyyy-mm-dd')
+    parser.add_argument('--end_date', type=str, default='2020-01-06', help='datetime yyyy-mm-dd')
     parser.add_argument('--sleep', type=float, default=0.1, help='Sleep time')
     parser.add_argument('--header', type=str, default=None, help='corpus file name header')
     parser.add_argument('--query_file', type=str, default='queries.txt', help='query file. a line a query')
     parser.add_argument('--debug', dest='DEBUG', action='store_true')
     parser.add_argument('--verbose', dest='VERBOSE', action='store_true')
-    parser.add_argument('--comments', dest='GET_COMMENTS', action='store_true')
+    parser.add_argument('--comments', dest='GET_COMMENTS', action='store_false')
 
     args = parser.parse_args()
     root_directory = args.root_directory
